@@ -19,6 +19,12 @@ app.listen(PORT, () => {
 
 // Get the stock market status (open/closed) - JSON
 // Example: http://localhost:8080/get_market_status
+
+
+app.get('/' , (req , res) => {
+  res.send("National Stock Exchange (NSE) APIS")
+})
+
 app.get("/get_market_status", (req, res, next) => {
   NSEAPI.getMarketStatus()
     .then(function (response) {
